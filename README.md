@@ -1,2 +1,2 @@
 # football-season-forecast
-Anallysing football teams and generating season forecasts.
+Analysing football teams and generating season forecasts.
