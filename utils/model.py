@@ -1,6 +1,7 @@
-import pymc3 as pm
+import os
 
-def save_parameters(trace, idata, model_name):
-    save_path = f'out/{model_name}'
-    pm.save_trace(trace, save_path + '/trace')
-    idata.to_netcdf(save_path + '/idata.nc')
+def save_idata(idata, model_name):
+    path = f'out/{model_name}'
+    if not os.path.exists(path):
+        os.makedirs(path)
+    idata.to_netcdf(os.path.join(path, 'idata.nc'))
